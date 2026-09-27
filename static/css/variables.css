@@ -1,0 +1,20 @@
+:root {
+    /* Kleuren */
+    --color-primary: #334155;
+    --color-primary-hover: #1F2937;
+    --color-danger: #DC2626;
+    --color-background: #f7f7f8;
+
+    /* Tekst */
+    --color-text: #1F2937;
+    --color-text-muted: #888;
+
+    /* Borders */
+    --border-color: #ccc;
+    --border-radius: 6px;
+
+    /* Spacing */
+    --spacing-small: 8px;
+    --spacing-medium: 12px;
+    --spacing-large: 20px;
+}

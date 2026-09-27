@@ -9,6 +9,7 @@ CSS_DIR = Path("static/css")
 STYLE_FILE = CSS_DIR / "style.css"
 
 CSS_ORDER = [
+    'variables.css',
     "base.css"
 ]
 
