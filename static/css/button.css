@@ -26,9 +26,15 @@
     background-color: #e5e5e5;
 }
 
-.btn-danger{
-    background-color: #0065fc;
+.btn-danger {
+    background-color: #DC2626;
     color: white;
+    border-color: #DC2626;
+}
+
+.btn-danger:hover {
+    background-color: #B91C1C;
+    border-color: #B91C1C;
 }
 
 .btn-succes{
