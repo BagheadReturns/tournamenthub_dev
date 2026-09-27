@@ -370,7 +370,7 @@ html {
     {% if 'tournament.edit' in permissions['tournaments'].get(tournament.id|string, []) %}
         <a
             href="{{ url_for('editTournament', tournamentId=tournament.id) }}"
-            class="round-tab active"
+            class="btn btn-primary"
         >
             Edit tournament
         </a>
@@ -404,12 +404,13 @@ html {
 
     {% for round in rounds %}
 
-        <div
-            class="round-tab {% if loop.first %}active{% endif %}"
+        <button
+            type="button"
+            class="btn {% if loop.first %}btn-primary{% else %}btn-secondary{% endif %}"
             data-round="{{ round.id }}"
         >
             {{ round.name }}
-        </div>
+        </button>
 
     {% endfor %}
 
@@ -531,7 +532,7 @@ const EDIT_GAME_TEMPLATE =
     {{ url_for('edit_game', game_id=999999999)|tojson }};
 
 
-const tabs = document.querySelectorAll(".round-tab[data-round]");
+const tabs = document.querySelectorAll("[data-round]");
 const contents = document.querySelectorAll(".round-content");
 
 
@@ -1098,23 +1099,18 @@ async function activateRound(roundId, loadData = true) {
 
 
     tabs.forEach(tab => {
-
-        tab.classList.remove("active");
-
+        tab.classList.remove("btn-primary");
+        tab.classList.add("btn-secondary");
     });
 
-
     contents.forEach(content => {
-
         content.classList.remove("active");
-
     });
 
 
     const selectedTab = document.querySelector(
-        `.round-tab[data-round="${CSS.escape(String(roundId))}"]`
+        `[data-round="${CSS.escape(String(roundId))}"]`
     );
-
 
     const selectedContent = document.getElementById(
         "round-" + roundId
@@ -1122,9 +1118,8 @@ async function activateRound(roundId, loadData = true) {
 
 
     if (selectedTab) {
-
-        selectedTab.classList.add("active");
-
+        selectedTab.classList.remove("btn-secondary");
+        selectedTab.classList.add("btn-primary");
     }
 
 
