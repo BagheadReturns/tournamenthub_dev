@@ -14,6 +14,8 @@ from db.connection import get_db_connection
 from auth.decorators import login_required
 from permissions.permission import can_user
 from services.lobbies import get_lobby_rounds_points, calc_prediction_points_game, get_lobby_leaderboard
+from scripts.build_style import build_style_css
+
 
 load_dotenv()
 
@@ -2003,4 +2005,5 @@ def admin():
     return render_template('admin.html')
 
 if __name__ == "__main__":
+    build_style_css()
     app.run(port=os.getenv("PORT"))
