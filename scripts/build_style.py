@@ -43,7 +43,6 @@ def build_style_css():
         css_file = all_css_files.get(filename)
 
         if css_file is None:
-            print(f"[CSS] Niet gevonden: {filename}")
             continue
 
         ordered_files.append(css_file)
@@ -82,6 +81,4 @@ def build_style_css():
 
             output.write("\n\n")
 
-            print(f"[CSS] Toegevoegd: {css_file.name}")
 
-    print(f"[CSS] Klaar: {STYLE_FILE}")
