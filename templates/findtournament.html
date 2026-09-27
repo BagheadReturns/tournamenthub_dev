@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
 <style>
     form {
         display: flex;
@@ -13,8 +14,7 @@
         max-width: 700px;
     }
 
-    input,
-    button {
+    input{
         padding: 10px;
         font-size: 16px;
     }
@@ -29,10 +29,6 @@
         gap: 8px;
     }
 
-    button {
-        white-space: nowrap;
-        cursor: pointer;
-    }
 
     .error {
         color: red;
@@ -65,7 +61,7 @@
             required
         >
 
-        <button type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 
     {% if error %}

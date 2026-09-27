@@ -1,6 +1,7 @@
 {% extends 'template.html' %}
 
 {% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
 <style>
 
 html {
@@ -240,50 +241,6 @@ html {
     text-decoration: underline;
 }
 
-/* =========================
-   Buttons / links
-   ========================= */
-
-.edit-game,
-.make-game,
-.delete-round {
-    display: inline-block;
-    padding: 10px 14px;
-    margin-top: 5px;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.edit-game {
-    color: white;
-    background: #2d7ff9;
-}
-
-.edit-game:hover {
-    background: #1769d5;
-}
-
-.make-game {
-    color: white;
-    background: #2d7ff9;
-}
-
-.make-game:hover {
-    background: #1769d5;
-}
-
-.delete-round {
-    color: #8f2929;
-    background: #fff1f1;
-    border: 1px solid #e4aaaa;
-}
-
-.delete-round:hover {
-    background: #ffe0e0;
-}
 
 /* =========================
    No games / loading / errors
@@ -372,14 +329,6 @@ html {
 
     .team {
         padding: 12px;
-    }
-
-    .edit-game,
-    .make-game,
-    .delete-round {
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
     }
 
     .round-heading {
@@ -528,7 +477,7 @@ html {
 
                 <a
                     href="{{ url_for('makeGame', roundId=round.id) }}"
-                    class="make-game"
+                    class="btn btn-primary"
                 >
                     Make game
                 </a>
@@ -547,7 +496,7 @@ html {
 
                     <button
                         type="submit"
-                        class="delete-round"
+                        class="btn btn-danger"
                     >
                         Delete round
                     </button>
@@ -853,7 +802,7 @@ function renderGames(roundId, games) {
             ? `
                 <a
                     href="${editUrl}"
-                    class="edit-game"
+                    class="btn btn-primary"
                 >
                     Edit game
                 </a>
